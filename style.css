@@ -1,0 +1,23 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+video, .sketchfab-embed-wrapper {
+    width: 100%;
+    height: 50%; /* 50% each, to share screen equally */
+}
+
+#homevideo {
+    object-fit: cover;
+}
+
+#sketchfab-embed {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
