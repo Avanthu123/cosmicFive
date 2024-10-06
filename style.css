@@ -46,7 +46,7 @@ iframe {
 }
 
 .rocket-launch {
-  animation: rocketLaunch 2s forwards;
+  animation: rocketLaunch 1s forwards;
 }
 
 @keyframes rocketLaunch {
@@ -78,6 +78,86 @@ iframe {
     position: relative;
     z-index: 1;
     background-image: url('2.jpg');
+}
+
+.bg3{
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    background-image: url('3.jpg');
+}
+
+.bg4{
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    background-image: url('4.jpg');
+}
+
+.bg5{
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    background-image: url('5.jpg');
+}
+
+.bg6{
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    background-image: url('6.jpg');
+}
+
+.bg7{
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    background-image: url('7.jpg');
+}
+
+.bg8{
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    background-image: url('8.jpg');
+}
+
+.bg9{
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    background-image: url('9.jpg');
+}
+
+.bg10{
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    background-image: url('10.jpg');
 }
 
 .content {
