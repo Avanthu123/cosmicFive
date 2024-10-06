@@ -1,63 +1,76 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <style>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-black relative">
 
-            /* Smooth scroll animation */
-            html {
-                scroll-behavior: smooth;
-            }
+    <button id="homeButton" class="fixed top-5 left-5 bg-white p-2 rounded-full text-black">Home</button>
+    <audio id="videoBgMusic" src="video-background-music.m4a" loop></audio>
+    <audio id="modelBgMusic" src="video-background-music.m4a" loop></audio>
 
-            /* Styles for star flicker effect */
-            .star {
-                animation: flicker 2s infinite alternate;
-            }
-        </style>
-    </head>
-    <body class="bg-black relative">
-        <!-- Fullscreen Video Section -->
-        <section id="contentSection" class="h-screen relative">
-            <video autoplay muted playsinline class="w-full h-full object-cover" id="homevideo">
-                <source src="homevideo.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+    <section id="startSection" class="h-screen relative">
+        <video autoplay muted playsinline id="homevideo" class="absolute top-0 left-0 w-full h-full object-cover">
+            <source src="homevideo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
-            <!-- Rocket Icon Button positioned over the video -->
-            <div id="startButton" class="absolute flex flex-col items-center cursor-pointer bottom-10 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <!-- Rocket Image -->
-                <img src="https://image.pngaaa.com/483/3807483-middle.png" alt="Rocket" class="w-24 h-24 rocket-shake">
-                <span class="text-white mt-4 text-xl font-bold">Start Journey</span>
-            </div>
+        <div id="startButton" class="z-10 flex flex-col items-center cursor-pointer">
+            <img src="rocketicon.png" alt="Rocket" class="w-24 h-24">
+            <span class="text-white mt-4 text-xl font-bold">Start Journey</span>
+        </div>
+    </section>
 
-            <!-- Glowing Stars (optional) -->
-            <div class="absolute top-1/4 left-1/4 w-2 h-2 bg-white rounded-full star"></div>
-            <div class="absolute top-1/3 left-1/3 w-2 h-2 bg-white rounded-full star"></div>
-            <div class="absolute top-1/2 right-1/3 w-2 h-2 bg-white rounded-full star"></div>
-            <div class="absolute bottom-1/4 right-1/4 w-2 h-2 bg-white rounded-full star"></div>
-        </section>
+    <section id="modelSection" class="h-screen">
+        <div class="w-full h-full">
+            <iframe id="sketchfab-embed" title="JWST (James Webb Space Telescope)" frameborder="0" allowfullscreen
+                mozallowfullscreen="true" webkitallowfullscreen="true"
+                allow="autoplay; fullscreen; xr-spatial-tracking"
+                src="https://sketchfab.com/models/6c92c08a672640afb58ee44d248fd0fe/embed?autostart=1&preload=1&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0"scrollwheel=0"
+                class="w-full h-full">
+            </iframe>
+        </div>
+    </section>
 
-        <!-- 3D Model Section -->
-        <section id="modelSection" class="h-screen">
-            <div class="w-full h-full">
-                <iframe id="sketchfab-embed" title="JWST (James Webb Space Telescope)" frameborder="0" allowfullscreen
-                    mozallowfullscreen="true" webkitallowfullscreen="true"
-                    allow="autoplay; fullscreen; xr-spatial-tracking" 
-                    src="https://sketchfab.com/models/6c92c08a672640afb58ee44d248fd0fe/embed?autostart=1&preload=1&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0"
-                    class="w-full h-full">
-                </iframe>
-            </div>
-        </section>
+    <script>
+        // JavaScript to handle button click, start video, and remove elements
+        const startButton = document.getElementById('startButton');
+        const startSection = document.getElementById('startSection');
+        const modelSection = document.getElementById('modelSection');
+        const video = document.getElementById('homevideo');
+        const videoBgMusic = document.getElementById('videoBgMusic');
+        const modelBgMusic = document.getElementById('modelBgMusic');
 
-        <script>
-            // JavaScript to handle button click and scroll to next section
-            const startButton = document.getElementById('startButton');
-            const modelSection = document.getElementById('modelSection');
+        // Start video background music on page load
+        videoBgMusic.play();
 
-            startButton.addEventListener('click', function() {
-                // Smooth scroll to the 3D model section
-                modelSection.scrollIntoView({ behavior: 'smooth' });
-            });
-        </script>
-    </body>
+        startButton.addEventListener('click', function () {
+            // Add rocket launch animation
+            startButton.classList.add('rocket-launch');
+
+            // After animation, show video and hide the button
+            setTimeout(() => {
+                startButton.style.display = 'none'; // Hide the button
+                startSection.classList.add('hidden');  // Hide the start section
+                modelSection.classList.remove('hidden');  // Show the model section after the delay
+                video.play();  // Start the video
+                videoBgMusic.play();  // Resume video background music
+                modelBgMusic.pause();  // Pause model background music
+            }, 2000);  // Wait for rocket launch animation to finish
+        });
+
+        // Pause video background music when entering model section
+        modelSection.addEventListener('click', () => {
+            videoBgMusic.pause();
+            modelBgMusic.play();
+        });
+
+        // Resume video background music when leaving model section
+        homeButton.addEventListener('click', () => {
+            videoBgMusic.play();
+            modelBgMusic.pause();
+        });
+    </script>
+</body>
 </html>
