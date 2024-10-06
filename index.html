@@ -33,44 +33,13 @@
         </div>
     </section>
 
-    <script>
-        // JavaScript to handle button click, start video, and remove elements
-        const startButton = document.getElementById('startButton');
-        const startSection = document.getElementById('startSection');
-        const modelSection = document.getElementById('modelSection');
-        const video = document.getElementById('homevideo');
-        const videoBgMusic = document.getElementById('videoBgMusic');
-        const modelBgMusic = document.getElementById('modelBgMusic');
+    <section class="background-image">
+        <div class="content">
+            <h1 style="color: antiquewhite;">First Deep Field Image: "Galactic Crowd Surfing"</h1>
+            <p style="color: antiquewhite;">Well, well, well, look who decided to show up! The JWST just dropped its first deep field image, revealing thousands of galaxies, like it's the ultimate cosmic reunion. Seriously, it's like the universe held a “Bring Your Own Galaxy” party and forgot to send us the invite. Now astronomers are having an existential crisis trying to understand how all these galaxies are forming while we can't even figure out our group chats!</p>
+        </div>
+    </section>
 
-        // Start video background music on page load
-        videoBgMusic.play();
-
-        startButton.addEventListener('click', function () {
-            // Add rocket launch animation
-            startButton.classList.add('rocket-launch');
-
-            // After animation, show video and hide the button
-            setTimeout(() => {
-                startButton.style.display = 'none'; // Hide the button
-                startSection.classList.add('hidden');  // Hide the start section
-                modelSection.classList.remove('hidden');  // Show the model section after the delay
-                video.play();  // Start the video
-                videoBgMusic.play();  // Resume video background music
-                modelBgMusic.pause();  // Pause model background music
-            }, 2000);  // Wait for rocket launch animation to finish
-        });
-
-        // Pause video background music when entering model section
-        modelSection.addEventListener('click', () => {
-            videoBgMusic.pause();
-            modelBgMusic.play();
-        });
-
-        // Resume video background music when leaving model section
-        homeButton.addEventListener('click', () => {
-            videoBgMusic.play();
-            modelBgMusic.pause();
-        });
-    </script>
+    <script src = 'script.js'></script>
 </body>
 </html>

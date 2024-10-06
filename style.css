@@ -18,10 +18,10 @@ html, body {
 #startButton {
     position: fixed; /* Fixed positioning at the bottom */
     bottom: 20px; /* Place it slightly above the bottom edge */
-    left: 50%;
-    transform: translateX(-50%);
+    left: 50%; /* Center the button horizontally */
     z-index: 1; /* Ensure icon appears above the video */
-}
+    transform: none; /* Remove any existing transform properties */
+  }
 
 /* 3D Model Section */
 #modelSection {
@@ -46,5 +46,37 @@ iframe {
 }
 
 .rocket-launch {
-    animation: launch 2s ease-out;
+  animation: rocketLaunch 2s forwards;
+}
+
+@keyframes rocketLaunch {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100vh);
+  }
+}
+
+/* Image styles */
+
+.background-image {
+    background-image: url('1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+.content {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    text-align:justify;
+    z-index: 2;
 }
