@@ -1,82 +1,84 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow-y: auto; /* Enable vertical scrolling */
+/* coding with nick */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+
+* {
+  box-sizing: border-box;
 }
 
-#startSection {
-    min-height: 100vh; /* Ensure the section fills the viewport */
+body {
+  background-color: #b8c6db;
+  background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7f7 100%);
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
 }
 
-#homevideo {
-    object-fit: cover;
-    width: 100%;
-    height: 100%; /* Ensure the video covers the full viewport */
+#videoBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1; /* Put the video behind all content */
+  object-fit: cover; /* Ensures the video covers the entire viewport */
 }
 
-#startButton {
-    position: fixed; /* Fixed positioning at the bottom */
-    bottom: 20px; /* Place it slightly above the bottom edge */
-    left: 50%; /* Center the button horizontally */
-    z-index: 1; /* Ensure icon appears above the video */
-    transform: none; /* Remove any existing transform properties */
-  }
-
-/* 3D Model Section */
-#modelSection {
-    height: 100vh; /* Fullscreen 3D model section */
+.quiz-container {
+  background-color: rgba(0, 0, 0, 0.2); /* Transparent box background */
+  border-radius: 10px;
+  box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
+  width: 600px;
+  overflow: hidden;
 }
 
-#sketchfab-embed {
-    width: 100%;
-    height: 100%;
-    border: none;
+.quiz-header {
+  padding: 4rem;
 }
 
-/* Disable mouse-wheel zoom interaction */
-iframe {
-    pointer-events: auto;
+h2 {
+  padding: 1rem;
+  text-align: center;
+  margin: 0;
+  color: #ffffff; /* Ensure text is black and fully visible */
 }
 
-/* Rocket launch animation */
-@keyframes launch {
-    0% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(-1000px); opacity: 0; }
+ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-.rocket-launch {
-  animation: rocketLaunch 2s forwards;
+ul li {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  color: #ffffff; /* Text remains fully visible */
 }
 
-@keyframes rocketLaunch {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-100vh);
-  }
+ul li label {
+  cursor: pointer;
 }
 
-/* Image styles */
-
-.background-image {
-    background-image: url('1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    height: 100%;
-    position: relative;
-    z-index: 1;
+button {
+  background-color: #03051d;
+  color: #fff;
+  border: none;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-family: inherit;
+  padding: 1.3rem;
 }
-.content {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 400px;
-    text-align:justify;
-    z-index: 2;
+
+button:hover {
+  background-color: #032853;
+}
+
+button:focus {
+  outline: none;
+  background-color: #44b927;
 }
