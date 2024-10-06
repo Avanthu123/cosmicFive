@@ -4,11 +4,16 @@
 <head>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 
 <body class="bg-black relative">
 
-    <button id="homeButton" class="fixed top-5 left-5 bg-white p-2 rounded-full text-black">Home</button>
+    <button id="homeButton" class="fixed top-5 left-5 flex items-center z-20 bg-white p-2 rounded-full text-black">Home</button>
     <audio id="videoBgMusic" src="video-background-music.m4a" loop></audio>
     <audio id="modelBgMusic" src="video-background-music.m4a" loop></audio>
 
@@ -19,280 +24,192 @@
         </video>
 
         <div id="startButton" class="z-10 flex flex-col items-center cursor-pointer">
-            <img src="rocketicon.png" alt="Rocket" class="w-24 h-24">
-            <span class="text-white mt-4 text-xl font-bold">Start Journey</span>
+            <a href="#modelSection" class="smooth-scroll">
+                <img src="rocketicon.png" alt="Rocket" class="w-24 h-24">
+                <span class="text-white mt-4 text-xl font-bold">Start Journey</span>
+            </a>
         </div>
     </section>
 
-    <section id="modelSection" class="h-screen">
-        <div class="w-full h-full">
-            <iframe id="sketchfab-embed" title="JWST (James Webb Space Telescope)" frameborder="0" allowfullscreen
-                mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking"
-                src="https://sketchfab.com/models/6c92c08a672640afb58ee44d248fd0fe/embed?autostart=1&preload=1&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0"
-                scrollwheel="0" class="w-full h-full">
-            </iframe>
-        </div>
-
-        <!-- Navigation buttons -->
-        <div class="flex justify-between mt-4">
-            <button id="prevButton" class="bg-white p-2 rounded-full text-black">Previous</button>
-            <button id="nextButton" class="bg-white p-2 rounded-full text-black">Next</button>
-        </div>
-    </section>
-
-    <div class="bg1">
-        <div class="content">
-            <b>
-                <h1>First Deep Field Image: "Galactic Crowd Surfing"</h1>
-            </b>
-            <p>Well, well, well, look who decided to show up! The JWST just dropped its first deep field image,
-                revealing thousands of galaxies, like it's the ultimate cosmic reunion. Seriously, it's like the
-                universe held a “Bring Your Own Galaxy” party and forgot to send us the invite. Now astronomers are
-                having an existential crisis trying to understand how all these galaxies are forming while we can't even
-                figure out our group chats!</p>
-        </div>
-
-        <!-- Navigation buttons -->
-        <!-- Navigation buttons -->
-        <div class="flex justify-between mt-4">
-            <button id="prevButton" class="bg-white p-2 rounded-full text-black">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="15 18 9 12 15 6"></polyline>
-                </svg>
-            </button>
-            <button id="nextButton" class="bg-white p-2 rounded-full text-black">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-            </button>
-        </div>
+    <section id="modelSection" class="h-screen relative">
+    <div class="w-full h-full">
+        <iframe id="sketchfab-embed" title="JWST (James Webb Space Telescope)" frameborder="0" allowfullscreen
+            mozallowfullscreen="true" webkitallowfullscreen="true"
+            allow="autoplay; fullscreen; xr-spatial-tracking"
+            src="https://sketchfab.com/models/6c92c08a672640afb58ee44d248fd0fe/embed?autostart=1&preload=1&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0"
+            scrollwheel="0" class="w-full h-full">
+        </iframe>
     </div>
 
-    <div class="bg2">
-        <div class="content">
-            <b>
-                <h1>Discovery of the Oldest Galaxies: "Ancient Light Show"</h1>
-            </b>
-            <p>Surprise! JWST spotted light from galaxies that are older than your grandma's favorite recipe—over 13
-                billion years old! These ancient cosmic relics are helping scientists piece together the early universe
-                like a jigsaw puzzle missing half the pieces. It's like finding out that your ancestors were around
-                during the Big Bang, and now you have to justify why you can't even keep a houseplant alive.</p>
-        </div>
-
-        <!-- Navigation buttons -->
-        <!-- Navigation buttons -->
-        <div class="flex justify-between mt-4">
-            <button id="prevButton" class="bg-white p-2 rounded-full text-black">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="15 18 9 12 15 6"></polyline>
-                </svg>
-            </button>
-            <button id="nextButton" class="bg-white p-2 rounded-full text-black">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-            </button>
-        </div>
+    <div class="absolute top-1/3 w-full flex justify-between px-4">
+        <a href="#startSection" class="flex items-center"><img src="prev.png" alt="Previous" class="w-10 h-10"></a>
+        <a href="#bg1" class="flex items-center"><img src="next.png" alt="Next" class="w-10 h-10"></a>
     </div>
+</section>
 
-    <div class="bg3">
+    <section id="bg1" class="bg1 h-screen">
         <div class="content">
-            <h1>Water in Exoplanet Atmosphere: "WASP-96b: The Next Vacation Spot?"</h1>
-            <p>Hold the phone! JWST found water vapor on the hot gas giant WASP-96b! Because when I think of a vacation destination, I definitely think of a scalding gas giant where the weather is basically “stay indoors.” This discovery is groundbreaking for studying distant atmospheres—who knew interstellar real estate was so exciting? Better start planning that trip to WASP-96b, folks. Just remember, the only souvenir you'll be bringing back is heatstroke!</p>
-        </div>
-
-        <!-- Navigation buttons -->
-        <!-- Navigation buttons -->
-        <div class="flex justify-between mt-4">
-            <button id="prevButton" class="bg-white p-2 rounded-full text-black">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="15 18 9 12 15 6"></polyline>
-                </svg>
-            </button>
-            <button id="nextButton" class="bg-white p-2 rounded-full text-black">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-            </button>
-        </div>
-    </div>
-
-
-    <div class="bg4">
-        <div class="content">
-            <h1>Direct Imaging of Exoplanets: "Exoplanet Photoshoot"</h1>
-            <p> In a stunning cosmic twist, JWST managed to snap a direct photo of the exoplanet HIP 65426b! It's like
-                the planet finally got its influencer moment, complete with glam shots. Now we can study it in detail
-                like it's the latest celebrity scandal. Welcome to a new era of exoplanet research, where we'll be
-                critiquing planets for their “outfits” and wondering why they havent returned our DMs. Who knew the
-                universe was so into selfies?</p>
-        </div>
-
-        <!-- Navigation buttons -->
-        <!-- Navigation buttons -->
-        <div class="flex justify-between mt-4">
-            <button id="prevButton" class="bg-white p-2 rounded-full text-black">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="15 18 9 12 15 6"></polyline>
-                </svg>
-            </button>
-            <button id="nextButton" class="bg-white p-2 rounded-full text-black">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-            </button>
-        </div>
-    </div>
-
-    <div class="bg5">
-        <div class="content">
-            <h1>Stephan's Quintet Image: The "Galaxy Social Network"</h1>
-            <p>Wow, the JWST finally gave us a close-up of Stephan's Quintet—five galaxies just hanging out, like the universe's version of a hipster café. Astronomers are thrilled to get a front-row seat to this cosmic drama, studying galactic interactions like they're the latest season of “Real Housewives of Space.” Who knew cosmic mergers could be so riveting?
+            <b><h1>First Deep Field Image: "Galactic Crowd Surfing"</h1></b>
+            <p>
+                Well, well, look who decided to show up! The JWST just dropped its first deep field image,
+                revealing thousands of galaxies. Seriously, it's like the universe held a "Bring Your Own Galaxy" party and forgot to send us the invite. Now astronomers are having an existential crisis trying to understand how all these galaxies are forming while we can't even figure out our group chats!
             </p>
         </div>
 
-        <!-- Navigation buttons -->
-        <!-- Navigation buttons -->
-        <div class="flex justify-between mt-4">
-            <button id="prevButton" class="bg-white p-2 rounded-full text-black">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="15 18 9 12 15 6"></polyline>
-                </svg>
-            </button>
-            <button id="nextButton" class="bg-white p-2 rounded-full text-black">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-            </button>
+        <div class="absolute top-1/3 w-full flex justify-between px-4">
+            <a href="#modelSection" class="flex items-center"><img src="prev.png" alt="Previous" class="w-10 h-10"></a>
+            <a href="#bg2" class="flex items-center"><img src="next.png" alt="Next" class="w-10 h-10"></a>
         </div>
-    </div>
+    </section>
 
-    <div class="bg6">
+    <section id="bg2" class="bg2 h-screen">
         <div class="content">
-            <h1>Discovery of Carbon Dioxide in Exoplanet Atmosphere: The "Breath of WASP-39b"</h1>
-            <p>Congratulations, JWST! You found carbon dioxide on exoplanet WASP-39b. You know, that thing we breathe
+            <b><h1>Discovery of the Oldest Galaxies: "Ancient Light Show"</h1></b>
+            <p>
+                Surprise! JWST spotted light from galaxies that are older than your grandma's favorite recipe—over 13
+                billion years old! These ancient ones are helping scientists piece together the early universe
+                like a jigsaw puzzle. It's like finding out that your ancestors were around
+                during the Big Bang, and now you have to justify why you can't even keep a houseplant alive.
+            </p>
+        </div>
+
+        <div class="absolute top-1/3 w-full flex justify-between px-4">
+            <a href="#bg1" class="flex items-center"><img src="prev.png" alt="Previous" class="w-10 h-10"></a>
+            <a href="#bg3" class="flex items-center"><img src="next.png" alt="Next" class="w-10 h-10"></a>
+        </div>
+    </section>
+
+    <section id="bg3" class="bg3 h-screen">
+        <div class="content">
+            <b><h1>Water in Exoplanet Atmosphere: "WASP-96b: The Next Vacation Spot?"</h1></b>
+            <p> Hold the phone! JWST found water vapor on the hot gas giant WASP-96b! When I think of a vacation spot, I definitely don't picture a scorching gas giant. This discovery is groundbreaking—who knew interstellar real estate could be so thrilling? Just remember, the only souvenir you'll be bringing back is heatstroke!
+            </p>
+        </div>
+
+        <div class="absolute top-1/3 w-full flex justify-between px-4">
+            <a href="#bg2" class="flex items-center"><img src="prev.png" alt="Previous" class="w-10 h-10"></a>
+            <a href="#bg4" class="flex items-center"><img src="next.png" alt="Next" class="w-10 h-10"></a>
+        </div>
+    </section>
+
+    <section id="bg4" class="bg4 h-screen">
+        <div class="content">
+            <b><h1>Direct Imaging of Exoplanets: "Exoplanet Photoshoot"</h1></b>
+            <p>In a stunning twist, JWST snapped a direct photo of the exoplanet HIP 65426b! It's like the planet got its influencer moment with glam shots. Now we can study it like the latest celebrity scandal. Welcome to a new era of exoplanet research, where we're critiquing planets on their “outfits” and wondering why they haven't returned our DMs. Who knew the universe was into selfies?
+            </p>
+        </div>
+
+        <div class="absolute top-1/3 w-full flex justify-between px-4">
+            <a href="#bg3" class="flex items-center"><img src="prev.png" alt="Previous" class="w-10 h-10"></a>
+            <a href="#bg5" class="flex items-center"><img src="next.png" alt="Next" class="w-10 h-10"></a>
+        </div>
+    </section>
+
+    <section id="bg5" class="bg5 h-screen">
+        <div class="content">
+            <b><h1>Stephan's Quintet Image: The "Galaxy Social Network"</h1></b>
+            <p>
+                Wow, the JWST finally gave us a close-up of Stephan's Quintet—five galaxies just hanging out, like the
+                universe's version of a hipster café. Astronomers are thrilled to get a front-row seat to this cosmic
+                drama, studying galactic interactions like they're the latest season of “Real Housewives of Space.” Who
+                knew cosmic mergers could be so riveting?
+            </p>
+        </div>
+
+        <div class="absolute top-1/3 w-full flex justify-between px-4">
+            <a href="#bg4" class="flex items-center"><img src="prev.png" alt="Previous" class="w-10 h-10"></a>
+            <a href="#bg6" class="flex items-center"><img src="next.png" alt="Next" class="w-10 h-10"></a>
+        </div>
+    </section>
+
+    <section id="bg6" class="bg6 h-screen">
+        <div class="content">
+            <b><h1>Discovery of Carbon Dioxide in Exoplanet Atmosphere: "The Breath of WASP-39b"</h1></b>
+            <p>
+                Congratulations, JWST! You found carbon dioxide on exoplanet WASP-39b. You know, that thing we breathe
                 out like it's going out of style. Now we can rest easy knowing there's something vaguely familiar in a
                 distant planet's atmosphere—just in case we ever need to take a cosmic vacation. Let's hope it comes
-                with a nice view!</p>
+                with a nice view!
+            </p>
         </div>
 
-    </div>
+        <div class="absolute top-1/3 w-full flex justify-between px-4">
+            <a href="#bg5" class="flex items-center"><img src="prev.png" alt="Previous" class="w-10 h-10"></a>
+            <a href="#bg7" class="flex items-center"><img src="next.png" alt="Next" class="w-10 h-10"></a>
+        </div>
+    </section>
 
-    <!-- Navigation buttons -->
-    <!-- Navigation buttons -->
-    <div class="flex justify-between mt-4">
-        <button id="prevButton" class="bg-white p-2 rounded-full text-black">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="15 18 9 12 15 6"></polyline>
-            </svg>
-        </button>
-        <button id="nextButton" class="bg-white p-2 rounded-full text-black">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-        </button>
-    </div>
-    </div>
-
-
-    <div class="bg7">
+    <section id="bg7" class="bg7 h-screen">
         <div class="content">
-            <h1>Unveiling Star Formation in Nebulae: The "Baby Star Spa"</h1>
-            <p>JWST is treating us to a spa day for stars in the Carina Nebula, unveiling thousands of baby stars we
+            <b><h1>Unveiling Star Formation in Nebulae: "The Baby Star Spa"</h1></b>
+            <p>
+                JWST is treating us to a spa day for stars in the Carina Nebula, unveiling thousands of baby stars we
                 never knew existed. Because, obviously, what we all needed was more knowledge about how stars are
                 formed—like we don't already have enough stars to keep track of. Can't wait for the next episode of
-                “Starbirth: The Ultimate Reality Show.”</p>
+                “Starbirth: The Ultimate Reality Show.”
+            </p>
         </div>
-    </div>
 
-    <!-- Navigation buttons -->
-    <!-- Navigation buttons -->
-    <div class="flex justify-between mt-4">
-        <button id="prevButton" class="bg-white p-2 rounded-full text-black">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="15 18 9 12 15 6"></polyline>
-            </svg>
-        </button>
-        <button id="nextButton" class="bg-white p-2 rounded-full text-black">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-        </button>
-    </div>
-    </div>
+        <div class="absolute top-1/3 w-full flex justify-between px-4">
+            <a href="#bg6" class="flex items-center"><img src="prev.png" alt="Previous" class="w-10 h-10"></a>
+            <a href="#bg8" class="flex items-center"><img src="next.png" alt="Next" class="w-10 h-10"></a>
+        </div>
+    </section>
 
-    <div class="bg8">
+    <section id="bg8" class="bg8 h-screen">
         <div class="content">
-          <h1>Detection of Organic Molecules in Distant Galaxies: "The Universe’s Chemistry Set"</h1>
-          <p>JWST is treating us to a spa day for stars in the Carina Nebula, unveiling thousands of baby stars we never knew existed. Because, obviously, what we all needed was more knowledge about how stars are formed—like we don’t already have enough stars to keep track of. Can’t wait for the next episode of “Starbirth: The Ultimate Reality Show.”</p>
+            <b><h1>Detection of Organic Molecules in Distant Galaxies: "The Universe’s Chemistry Set"</h1></b>
+            <p>
+                JWST's sensitive instruments have detected organic molecules in distant galaxies, opening up new
+                possibilities in understanding the chemical complexity of the universe. Who knew space was cooking up
+                such interesting recipes?
+            </p>
         </div>
-    </div>
 
-        <!-- Navigation buttons -->
-        <!-- Navigation buttons -->
-        <div class="flex justify-between mt-4">
-            <button id="prevButton" class="bg-white p-2 rounded-full text-black">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="15 18 9 12 15 6"></polyline>
-                </svg>
-            </button>
-            <button id="nextButton" class="bg-white p-2 rounded-full text-black">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-            </button>
+        <div class="absolute top-1/3 w-full flex justify-between px-4">
+            <a href="#bg7" class="flex items-center"><img src="prev.png" alt="Previous" class="w-10 h-10"></a>
+            <a href="#bg9" class="flex items-center"><img src="next.png" alt="Next" class="w-10 h-10"></a>
         </div>
-    </div>
+    </section>
 
-    <div class="bg9">
+    <section id="bg9" class="bg9 h-screen">
         <div class="content">
-          <h1>Analysis of Early Stars and Black Holes: "Cosmic Teenagers in Turmoil"</h1>
-          <p>JWST is taking a nostalgic trip back to the universe's teen years, observing the first stars and black holes like they’re angsty adolescents trying to figure out who they are. Astronomers are really excited to understand how these cosmic teens evolved, as if that knowledge is going to help us manage our own life crises. Spoiler alert: They probably just need some therapy.</p>
+            <b><h1>Analysis of Early Stars and Black Holes: "Cosmic Teenagers in Turmoil"</h1></b>
+            <p>
+                JWST is taking a nostalgic trip back to the universe's teen years, observing the first stars and black
+                holes like they're angsty adolescents trying to figure out who they are. Astronomers are excited to
+                understand how these cosmic teens evolved, as if that knowledge is going to help us manage our own life
+                crises. Spoiler alert: They probably just need some therapy.
+            </p>
         </div>
-    </div>
 
-        <!-- Navigation buttons -->
-        <!-- Navigation buttons -->
-        <div class="flex justify-between mt-4">
-            <button id="prevButton" class="bg-white p-2 rounded-full text-black">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="15 18 9 12 15 6"></polyline>
-                </svg>
-            </button>
-            <button id="nextButton" class="bg-white p-2 rounded-full text-black">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-            </button>
+        <div class="absolute top-1/3 w-full flex justify-between px-4">
+            <a href="#bg8" class="flex items-center"><img src="prev.png" alt="Previous" class="w-10 h-10"></a>
+            <a href="#bg10" class="flex items-center"><img src="next.png" alt="Next" class="w-10 h-10"></a>
         </div>
-    </div>
+    </section>
 
-    <div class="bg10">
+    <section id="bg10" class="bg10 h-screen">
         <div class="content">
-            <h1>Detailed Study of a Dying Star: "Star's Farewell Party"</h1>
-            <p>The JWST has captured the Southern Ring Nebula, showing a dying star shedding its layers like a dramatic diva at the end of a performance. It’s a cosmic farewell party complete with intricate details, giving us insights into the life cycles of stars. If only we could throw a retirement bash for the star—complete with cake and heartfelt speeches about its stellar past!</p>
+            <b><h1>Detailed Study of a Dying Star: "Star's Farewell Party"</h1></b>
+            <p>
+                The JWST has captured the Southern Ring Nebula, showing a dying star shedding its layers like a dramatic
+                diva at the end of a performance. It’s a cosmic farewell party complete with intricate details, giving
+                us insights into the life cycles of stars. If only we could throw a retirement bash for the star—
+                complete with cake and heartfelt speeches about its stellar past!
+            </p>
         </div>
 
-        <!-- Navigation buttons -->
-        <!-- Navigation buttons -->
-        <div class="flex justify-between mt-4">
-            <button id="prevButton" class="bg-white p-2 rounded-full text-black">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="15 18 9 12 15 6"></polyline>
-                </svg>
-            </button>
-            <button id="nextButton" class="bg-white p-2 rounded-full text-black">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-            </button>
+        <div class="absolute top-1/3 w-full flex justify-between px-4">
+            <a href="#bg9" class="flex items-center"><img src="prev.png" alt="Previous" class="w-10 h-10"></a>
+            <a href="#quizSection" class="flex items-center"><img src="next.png" alt="Next" class="w-10 h-10"></a>
         </div>
-    </div>
+    </section>
 
-    <section id="modelSection" class="h-screen">
+    <section id="quizSection" class="h-screen">
         <div class="w-full h-full">
-            <iframe id="sketchfab-embed" title="JWST (James Webb Space Telescope)" frameborder="0" allowfullscreen
-                mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking"
+            <iframe id="quiz-embed" title="JWST Quiz" frameborder="0" allowfullscreen
+                mozallowfullscreen="true" webkitallowfullscreen="true"
                 src="index1.html"
                 scrollwheel="0" class="w-full h-full">
             </iframe>
